@@ -42,10 +42,6 @@ Author: Satwik Singh
 							<li><a href="https://drive.google.com/drive/folders/1Rw-ns2zl01kf9tN-7roPKXYrbYgkbuR_?usp=sharing" target="_blank" class="button primary icon solid fa-download">Resume (PDF) </a></li>
 							<li><a href="https://www.linkedin.com/in/satwik-singh-179a54259/" target="_blank" class="button">Connect with me</a></li>
 						</ul>
-						<!-- <ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul> -->
 					</section>
 
 				<!-- Two -->
@@ -136,7 +132,7 @@ Author: Satwik Singh
 								<div class="experience-header">
 									<div class="experience-details">
 										<h3>This Cloud Resume</h3>
-										<p><b>HTML, CSS, SCSS, JS, JQuery, DynamoDB, AWS S3, CloudFront, Route 53</b></p>
+										<p><b>JS, JQuery, DynamoDB, AWS S3, CloudFront, Route 53</b></p>
 									</div>
 									<div class="experience-location">
 										<p><a style="color: #a2a2a2;" href="https://s000ik.github.io/Conway/" target="_blank">Github</a></p>
@@ -144,9 +140,9 @@ Author: Satwik Singh
 									</div>
 								</div>
 								<ul>
-									<li>Developed and deployed securely on AWS S3 buckets with HTTPS access via AWS CloudFront and custom DNS setup using AWS Route 53.</li>
+									<li>Developed and deployed a full-stack portfolio securely on AWS S3 buckets with HTTPS access via AWS CloudFront and custom DNS setup using AWS Route 53.</li>
 									<li>Implemented a JavaScript visitor counter with data managed in DynamoDB, interfacing through a custom API built with AWS API Gateway and Lambda functions in Python. Utlized boto3 library in Python for seamless integration.</li>
-									<li>Utilized AWS Serverless Application Model (SAM) for Infrastructure as Code (IaC) and established CI/CD pipelines with GitHub Actions, automating testing and deployment for both back-end and front-end.</li>
+									<li>Utilized AWS CLI and established CI/CD pipelines with GitHub Actions, automating cache invalidation and deployment for the website.</li>
 									<li>Ensured robust functionality and security by integrating Python tests for Lambda functions and excluding AWS credentials from source control.</li>
 								</ul>
 					
@@ -336,41 +332,6 @@ Author: Satwik Singh
 			});
 		</script>
 			
-			<!-- <script>
-				document.addEventListener('DOMContentLoaded', function() {
-					
-					const lambdaEndpoint = 'https://mobyilzfsl.execute-api.ap-south-1.amazonaws.com/prod/cloud-resume-test-api';
-		
-					// Function to fetch visitor count from Lambda
-					async function fetchVisitorCount() {
-						try {
-							const response = await fetch(lambdaEndpoint);
-							
-							// Check if the response is not okay
-							if (!response.ok) {
-								throw new Error('Network response was not ok');
-							}
-							
-							// Assuming the response is a plain text number
-							const visitorCount = await response.text();
-		
-							// Update the visitor count on the HTML page
-							const visitorCountElement = document.getElementById('visitorCount');
-							visitorCountElement.textContent = visitorCount.toLocaleString(); // Format the number if needed
-						} catch (error) {
-							console.error('Error fetching visitor count:', error);
-							// Optionally, handle errors here (e.g., display an error message)
-						}
-					}
-		
-					// Call fetchVisitorCount() to initiate fetching the count
-					fetchVisitorCount();
-		
-					// Optionally, you might want to update the count periodically:
-					// setInterval(fetchVisitorCount, 60000); // Fetch every minute (adjust interval as needed)
-				});
-			</script> -->
-
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
