@@ -1,4 +1,11 @@
 <!DOCTYPE HTML>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Satwik's Resume">
+<meta name="author" content="Satwik Singh">
+<meta name="keywords" content="Satwik Singh, Satwik, Singh, Resume, Satwik's Resume, Satwik Singh's Resume, Satwik Resume, Satwik Singh Resume, Satwik's Portfolio, Satwik Singh's Portfolio, Satwik Portfolio, Satwik Singh Portfolio, Satwik's CV, Satwik Singh's CV, Satwik CV, Satwik Singh CV, Satwik's Curriculum Vitae, Satwik Singh's Curriculum Vitae, Satwik Curriculum Vitae, Satwik Singh Curriculum Vitae, Satwik's Bio, Satwik Singh's Bio, Satwik Bio, Satwik Singh Bio, Satwik's About, Satwik Singh's About, Satwik About, Satwik Singh About, Satwik's Contact, Satwik Singh's Contact, Satwik Contact, Satwik Singh Contact, Satwik's Projects, Satwik Singh's Projects, Satwik Projects, Satwik Singh Projects, Satwik's Experience, Satwik Singh's Experience, Satwik Experience, Satwik Singh Experience, Satwik's Skills, Satwik Singh's Skills, Satwik Skills, Satwik Singh Skills, Satwik's Achievements, Satwik Singh's Achievements, Satwik Achievements, Satwik Singh Achievements, Satwik's Certificates, Satwik Singh's Certificates, Satwik Certificates, Satwik Singh Certificates, Satwik's Education, Satwik Singh's Education, Satwik Education, Satwik Singh Education, Satwik's Work, Satwik Singh's Work, Satwik Work, Satwik Singh Work, Satwik's Internships, Satwik Singh's Internships, Satwik Internships, Satwik Singh Internships, Satwik's Projects, Satwik Singh's Projects, Satwik Projects, Satwik Singh Projects, Satwik's Experience, Satwik Singh's Experience, Satwik Experience, Satwik Singh Experience, Satwik's Skills, Satwik Singh's Skills, Satwik Skills, Satwik Singh Skills, Satwik's Achievements, Satwik Singh's Achievements, Satwik Achievements, Satwik Singh Achievements, Satwik's Certificates, Satwik Singh's Certificates, Satwik Certificates, Satwik Singh Certificates, Satwik's Education, Satwik Singh's Education, Satwik Education, Satwik Singh Education, Satwik's Work, Satwik Singh's Work, Satwik Work, Satwik Singh Work, Satwik's Internships">
+<link rel="stylesheet" href="assets/css/main.css" />
+
 <!-- 
 Satwik's CRC
 (wooooooo)
@@ -8,9 +15,6 @@ Author: Satwik Singh
 	<div class="fade-in">
 	<head>
 		<title>Satwik's Resume</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 	</head>
 	<body class="is-preload">
@@ -305,16 +309,37 @@ Author: Satwik Singh
 					<ul class="copyright">
 						<li>&copy; ssatwik975</li>
 						<li>Design: <a href="https://www.behance.net/satwikdesigns" target="_blank">Satwik Singh</a></li>
-        				<li>Views	: <a href="#"><span id="visitorCount">Loading...</span></a></li>
+        				<li>Views	: <a href="#"><span id="viewCount">Loading...</span></a></li>
 					</ul>
 				</div>
 			</footer>
 			
 		<!-- Scripts -->
-			<script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				fetch('https://wdckl1np53.execute-api.ap-south-1.amazonaws.com/prod')
+					.then(response => response.json())
+					.then(data => {
+						// Parse the body JSON string
+						const body = JSON.parse(data.body);
+						
+						// Extract the views value
+						const views = body.views;
+						
+						// Update the view count in the HTML
+						document.getElementById('viewCount').textContent = views;
+					})
+					.catch(error => {
+						console.error('Error fetching view count:', error);
+						document.getElementById('viewCount').textContent = 'Failed to load';
+					});
+			});
+		</script>
+			
+			<!-- <script>
 				document.addEventListener('DOMContentLoaded', function() {
 					
-					const lambdaEndpoint = 'https://m2cxbdf4qmxypjcg23o4rjbygm0aiwff.lambda-url.ap-south-1.on.aws/';
+					const lambdaEndpoint = 'https://mobyilzfsl.execute-api.ap-south-1.amazonaws.com/prod/cloud-resume-test-api';
 		
 					// Function to fetch visitor count from Lambda
 					async function fetchVisitorCount() {
@@ -344,7 +369,7 @@ Author: Satwik Singh
 					// Optionally, you might want to update the count periodically:
 					// setInterval(fetchVisitorCount, 60000); // Fetch every minute (adjust interval as needed)
 				});
-			</script>
+			</script> -->
 
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
