@@ -39,7 +39,10 @@
 }
 
 
-
+.orange {
+	/* color: #FF9432; */
+	opacity: 1;
+}
 
 
 .skills-container {
@@ -60,6 +63,7 @@
 
 .skills-content {
     flex: 1; /* Fill remaining space */
+	/* color: #FF9432; */
 }
 
 
