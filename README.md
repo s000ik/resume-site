@@ -60,8 +60,8 @@ This project involves the development and deployment of a full-stack portfolio w
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/cloud-resume.git
-   cd cloud-resume
+   git clone https://github.com/s000ik/resume-site.git
+   cd resume-site
    ```
 
 2. **Configure AWS CLI:**
