@@ -5,7 +5,7 @@
 .fade-in {
     opacity: 0;
     background-color: white;
-    animation: fadeIn 1s cubic-bezier(.33,1.15,.73,.94) forwards;
+    animation: fadeIn 800ms cubic-bezier(.33,1.15,.73,.94) forwards;
 }
 
 /* Fade-in animation keyframes */
