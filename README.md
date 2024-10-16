@@ -48,6 +48,9 @@ This project involves the development and deployment of a full-stack portfolio w
    - Ensured AWS credentials were securely managed and excluded from source control.
    - Implemented tests and monitoring to maintain functionality and security.
 
+## Architecture 
+![Architecture Diagram](https://github.com/user-attachments/assets/2e2c8b12-2b4d-4921-a2cc-be07aaf998e6)
+
 ## Getting Started
 
 ### Prerequisites
