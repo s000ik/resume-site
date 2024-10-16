@@ -1,4 +1,4 @@
-![WhatsApp Image 2024-10-16 at 22 06 34_9db2c4aa](https://github.com/user-attachments/assets/0e145661-5017-44c4-a775-6de831af7243)# Cloud Resume
+# Cloud Resume
 
 ## Overview
 
