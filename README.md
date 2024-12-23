@@ -49,7 +49,10 @@ This project involves the development and deployment of a full-stack portfolio w
    - Implemented tests and monitoring to maintain functionality and security.
 
 ## Architecture 
-![Architecture Diagram](https://github.com/user-attachments/assets/2e2c8b12-2b4d-4921-a2cc-be07aaf998e6)
+![Architecture Diagram](https://github.com/user-attachments/assets/d0905155-96c3-4cc9-b497-c4ae474c8224)
+
+
+
 
 ## Getting Started
 
