@@ -1,0 +1,26 @@
+name: Frontend CI/CD for Terraformed Version - Invalidate CloudFront Cache
+
+on:
+  workflow_run:
+    workflows: ["Backend CI/CD - Deploy Infrastructure"]
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'ap-south-1'
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_TERRAFORM }}
+  
