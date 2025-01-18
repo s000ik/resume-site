@@ -1,8 +1,12 @@
 # Cloud Resume
 
-## Overview
+## Project Summary
 
-This project involves the development and deployment of a full-stack portfolio website utilizing various AWS services to ensure a secure and scalable solution. The resume website features a JavaScript visitor counter backed by a DynamoDB database, integrated with AWS API Gateway and Lambda functions.
+In this project I developed and deployed a full-stack portfolio website utilizing various AWS services to ensure a secure and scalable solution. The resume website features a JavaScript visitor counter storing data on a DynamoDB database, that is accessed and updated via an API endpoint I made through API-Gateway and AWS Lambda function written in Python. The web assets are stored inside an S3 bucket, which is served via CloudFront distributions with DNS management done through my Route53 hosted zones. 
+
+The entire infrastructure is also defined and managed via Terraform.
+
+View [resume.ssatwik.click](https://resume.ssatwik.click) or [terraformed-resume.ssatwik.click](https://terraformed-resume.ssatwik.click) for the terraformed version
 
 ## Technologies and Tools
 
@@ -11,11 +15,12 @@ This project involves the development and deployment of a full-stack portfolio w
 - **AWS S3**
 - **AWS CloudFront**
 - **AWS Route 53**
+- **AWS DynamoDB**
 - **AWS API Gateway**
 - **AWS Lambda (Python)**
-- **AWS DynamoDB**
 - **AWS CLI**
 - **GitHub Actions**
+- **Terraform**
 
 ## Features
 
