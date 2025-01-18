@@ -92,11 +92,5 @@ resource "aws_s3_object" "website_files" {
     "svg"   = "image/svg+xml"
   }, split(".", each.value)[length(split(".", each.value)) - 1], "binary/octet-stream")
 
-  force_destroy = false
-
-  lifecycle {
-    ignore_changes = [etag]
-  }
-
   depends_on = [aws_s3_bucket.website]
 }
