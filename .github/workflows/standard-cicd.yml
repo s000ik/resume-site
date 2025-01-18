@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  workflow:
+  standard-cicd:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

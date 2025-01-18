@@ -47,7 +47,7 @@ jobs:
         run: terraform apply -auto-approve
 
   terraform-frontend:
-    name: Terraformed Resume Frontend 
+    name: Refresh Terraformed frontend
     needs: terraform-backend
     runs-on: ubuntu-latest
     steps:
