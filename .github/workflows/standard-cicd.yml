@@ -1,4 +1,4 @@
-name: Frontend CI/CD - Deploy to S3 and Invalidate CloudFront Cache
+name: Standard CI/CD Pipeline - Deploy Frontend to S3 and Invalidate CloudFront Cache
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

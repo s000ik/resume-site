@@ -1,13 +1,12 @@
-name: Backend CI/CD - Deploy Infrastructure
-
+name: Terraformed Resume CI/CD - Deploy Infrastructure via Terraform and Invalidate CloudFront Cache
 on:
   push:
     branches:
       - main
 
 jobs:
-  terraform:
-    name: Deploy Infrastructure
+  terraform-backend:
+    name: Deploy Infrastructure via Terraform
     runs-on: ubuntu-latest
 
     env:
@@ -46,3 +45,21 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+  terraform-frontend:
+    name: Terraformed Resume Frontend 
+    needs: terraform-backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'ap-south-1'
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_TERRAFORM }}
+  
