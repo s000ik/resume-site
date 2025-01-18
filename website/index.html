@@ -47,9 +47,16 @@ Author: Satwik Singh
 
 
 				/* Updated blur effect */
-				backdrop-filter: blur(10px);
 				-webkit-backdrop-filter: blur(10px);
-
+				-moz-backdrop-filter: blur(10px);
+				-o-backdrop-filter: blur(10px);
+				backdrop-filter: blur(10px);
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				-webkit-font-smoothing: antialiased;
+				max-width: calc(100vw - 40px);
+				width: 400px;
+				margin-right: 0;
 				/* Rounded corners */
 				border-radius: 16px;
 
@@ -57,6 +64,12 @@ Author: Satwik Singh
 				animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 				display: none;
 
+			}
+
+			@supports not (backdrop-filter: blur(10px)) {
+				.notification {
+					background: rgba(246, 246, 246, 0.95);
+				}
 			}
 
 			.notification-close {
